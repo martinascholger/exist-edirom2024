@@ -21,7 +21,7 @@ Der Kurs richtet sich an Teilnehmer*innen, die bereits Erfahrung mit der Codieru
 
 Geschichte und Entwicklung, Übersicht über die Features, …
 
-#### Einführung in XPath (xpath.md)
+#### [Einführung in XPath](xpath.md)
 
-#### Einführung in XQuery (xquery.md)
+#### [Einführung in XQuery](xquery.md)
 
