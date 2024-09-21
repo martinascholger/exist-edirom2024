@@ -58,9 +58,10 @@ himself: eXist." (Siegel/Retter 2015, p.5)
 ## Installation des Datenpakets
 
 * Das Datenpaket kann über den folgenden Link geladen werden:
-    https://weber-gesamtausgabe.de/downloads/WeGA-data-4.11.0.xar
-* Die Erstellung des Datenpakets ist unter 
-    [`../scripts/obtain-data-xar.sh`](../scripts/obtain-data-xar.sh) 
+    <https://weber-gesamtausgabe.de/downloads/WeGA-data-4.11.0.xar>
+* Das Paket dann im Package Manager hochladen
+* [Bei Interesse:] Die Erstellung des Datenpakets ist unter 
+    <https://github.com/martinascholger/exist-edirom2024/blob/main/scripts/obtain-data-xar.sh> 
     dokumentiert
 
 ## Some Links
