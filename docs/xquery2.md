@@ -209,8 +209,62 @@ The CSS could look like:
 }
 ```
 
+## Requests
+
+eXist features a request module to capture various parameters from the HTTP 
+request, such as headers and URL parameters.
+
+```xquery
+xquery version "3.1";
+
+(:
+ : Namespace declarations
+ :)
+declare namespace xhtml="http://www.w3.org/1999/xhtml";
+declare namespace tei="http://www.tei-c.org/ns/1.0";
+declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization";
+declare namespace transform = "http://exist-db.org/xquery/transform";
+declare namespace request = "http://exist-db.org/xquery/request";
+
+(:
+ : Serialization and output options
+ :)
+declare option output:media-type "text/html";
+declare option output:method "xhtml";
+declare option output:indent "yes";
+declare option output:omit-xml-declaration "yes";
+
+(:
+ : Capture the parameter $id from the calling URL,
+ : e.g. `http://localhost:8080/exist/apps/WeGA-data/tei2html.xq?id=A042323`
+ : 
+ : If no parameter is passed, the default (i.e. the second argument 
+ : to `request:get-parameter#2`) will be taken
+ :)
+let $id := request:get-parameter("id", "A041627")
+let $db-path := "/db/apps/WeGA-data/letters/" || replace($id, "..$", "xx/") || $id || ".xml"
+return
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Test page</title>
+        <link rel="stylesheet" href="tei.css" media="screen"/>
+    </head>
+    <body>
+        {
+            transform:transform(
+                doc($db-path),
+                doc('/db/apps/WeGA-data/tei2html.xsl'),
+                ()
+            )
+        }
+    </body>
+</html>
+```
+
 ## Links
 
+* [XQuery Wikibook](https://en.wikibooks.org/wiki/XQuery)
 * Michael Kay, [Defining your own Functions in XQuery](http://www.stylusstudio.com/xquery/xquery-functions.html)
 * [XQuery 3.1: An XML Query Language. W3C Recommendation 21 March 2017](https://www.w3.org/TR/xquery-31/) 
 * xqDoc: <https://xqdoc.org/>
