@@ -109,12 +109,78 @@ eXist unterstützt diese Kommentare mit der App "XQuery Function
 Documentation", siehe <https://exist-db.org/exist/apps/fundocs/index.html>
 
 
+## Auflistung aller Brieftitel
+
+```xquery
+xquery version "3.1";
+
+
+(:
+ : Namespace declarations
+ :)
+declare namespace ess="https://exist.edirom.de";
+declare namespace xhtml="http://www.w3.org/1999/xhtml";
+declare namespace tei="http://www.tei-c.org/ns/1.0";
+declare namespace js="http://exist-db.org/xquery/javascript";
+
+
+(:~
+ : Returns an HTML list of the letter's titles.
+ : Calls ess:letter2tr#1 to process the individual letter
+ : 
+ : @param $letters the TEI letters to process
+ : @return the table (xhtml:table) with one row for every letter
+ :)
+ 
+declare function ess:letters2list($letters as document-node()*) as element(table) {
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Listing</title>
+        <link rel="stylesheet" href="tei.css" media="screen"/>
+
+    </head>
+    <body>
+        <ul>
+        {
+            $letters ! ess:letter2list(.)
+        }
+        </ul>
+    </body>
+</html>};
+
+
+(:~
+ : Returns a HTML list with the title of the letter linking to the full letter
+ :)
+declare function ess:letter2list($letter as document-node()?) as element(li)? {
+    let $id := $letter/tei:TEI/@xml:id => string()
+    let $title := $letter//tei:title[@level='a'][1]
+    let $string := string-join(
+        for $node in $title/node()
+    return if ($node/name() = 'lb') then ' ' else $node, ''
+    )
+    order by $title
+    return
+        
+        if ($id != "" and $string != "")
+        then
+            
+            <li xmlns="http://www.w3.org/1999/xhtml"><a href="/exist/apps/WeGA-data/tei2html.xq?{$id}">{$string}</a></li>
+        else()
+        
+};
+
+collection('/db/apps/WeGA-data/letters') => ess:letters2list() 
+```
+
 ## Ausführen von XSLT-Stylesheets innerhalb eines XQuery
 
 eXist stellt die Funktion transform zur Verfügung:
 ```xquery
 transform:transform($node-tree as node()*, $stylesheet as item(), $parameters as node()?) as node()?
 ```
+
+
 
 ### Beispiel
 
@@ -153,6 +219,45 @@ declare option output:omit-xml-declaration "yes";
         }
     </body>
 </html>
+```
+
+### XSLT zur Transformation der Briefe
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:math="http://www.w3.org/2005/xpath-functions/math"
+    xmlns:tei="http://www.tei-c.org/ns/1.0"
+    xmlns="http://www.w3.org/1999/xhtml"
+    exclude-result-prefixes="tei xs math"
+    version="3.0">
+    
+    <xsl:template match="/">
+        <div>
+            <xsl:apply-templates select="tei:TEI/tei:text/tei:body/tei:div[@type='writingSession']" />
+        </div>
+    </xsl:template>
+    
+    <xsl:template match="tei:opener | tei:closer | tei:p">
+        <p>
+            <xsl:apply-templates/>
+        </p>
+    </xsl:template>
+    
+    <xsl:template match="tei:choice">
+        <xsl:apply-templates select="tei:expan"/>
+    </xsl:template>
+    
+    <xsl:template match="tei:abbr"/>
+    
+    <xsl:template match="tei:persName">
+        <a href="{@ref}">
+            <xsl:apply-templates/>
+        </a>
+    </xsl:template>
+    
+
+</xsl:stylesheet>
 ```
 
 Some example XSL:
