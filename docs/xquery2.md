@@ -109,13 +109,105 @@ eXist unterstützt diese Kommentare mit der App "XQuery Function
 Documentation", siehe <https://exist-db.org/exist/apps/fundocs/index.html>
 
 
-## Ausführen von XSLT-Stylesheets innerhalb von XQuerys
+## Ausführen von XSLT-Stylesheets innerhalb eines XQuery
 
 eXist stellt die Funktion transform zur Verfügung:
 ```xquery
 transform:transform($node-tree as node()*, $stylesheet as item(), $parameters as node()?) as node()?
 ```
 
+### Beispiel
+
+```xquery
+xquery version "3.1";
+
+(:
+ : Namespace declarations
+ :)
+declare namespace xhtml="http://www.w3.org/1999/xhtml";
+declare namespace tei="http://www.tei-c.org/ns/1.0";
+declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization";
+declare namespace transform = "http://exist-db.org/xquery/transform";
+
+(:
+ : Serialization and output options
+ :)
+declare option output:media-type "text/html";
+declare option output:method "xhtml";
+declare option output:indent "yes";
+declare option output:omit-xml-declaration "yes";
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Test page</title>
+        <link rel="stylesheet" href="tei.css" media="screen"/>
+    </head>
+    <body>
+        {
+            transform:transform(
+                doc('/db/apps/WeGA-data/letters/A0416xx/A041627.xml'),
+                doc('/db/apps/WeGA-data/tei2html.xsl'),
+                ()
+            )
+        }
+    </body>
+</html>
+```
+
+Some example XSL:
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:xhtml="http://www.w3.org/1999/xhtml"
+    xmlns:tei="http://www.tei-c.org/ns/1.0"
+    exclude-result-prefixes="xs"
+    version="2.0">
+    
+    <xsl:template match="tei:*">
+        <xsl:element name="span" namespace="http://www.w3.org/1999/xhtml">
+            <xsl:variable name="elemName" as="xs:string" select="'tei_' || local-name()"/>
+            <xsl:variable name="attrs" as="xs:string*">
+                <xsl:for-each select="@*">
+                    <xsl:value-of select="local-name() || '_' || ."/>
+                </xsl:for-each>
+            </xsl:variable>
+            <xsl:attribute name="class" select="($elemName, $attrs)"/>
+            <xsl:apply-templates/>
+        </xsl:element>
+    </xsl:template>
+    
+</xsl:stylesheet>
+```
+
+The CSS could look like:
+
+```css
+.tei_teiHeader {
+    display: none;
+}
+
+.tei_p {
+    display: block;
+    padding: .5em;
+    text-align: justify;
+}
+
+.tei_closer {
+    display: block;
+    padding: .5em;
+}
+
+.tei_note {
+    display: none;
+}
+
+.tei_settlement, .tei_persName {
+    color: blue;
+}
+```
 
 ## Links
 
