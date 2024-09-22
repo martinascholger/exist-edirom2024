@@ -8,13 +8,13 @@ Sie ermöglicht es, komplexe Abfragen auf XML-Datenbanken oder Dokumenten durchz
 
 # XQuery für Einzeldokumente und Sammlungen
 
-Über die doc() Funktion werden einzelne XML-Dokumente eingelesen.
+Über die `doc()` Funktion werden einzelne XML-Dokumente eingelesen.
 
-```doc('/db/wega/data/letter.xml')```
+```doc('/db/apps/WeGA-data/letters/A0400xx/A040000.xml')```
 
-Die collection() Funktion adressiert ein ganzes Verzeichnis, in dem XML-Dateien abgelegt sind. 
+Die `collection()` Funktion adressiert ein ganzes Verzeichnis, in dem XML-Dateien abgelegt sind. 
 
-```doc('/db/wega/data')```
+```collection('/db/apps/WeGA-data/letters')```
 
 # TEI und XQuery
 
