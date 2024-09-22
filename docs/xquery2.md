@@ -87,6 +87,17 @@ In einem anderen XQuery wird dieses Modul dann folgendermaßen eingebunden:
 import module namespace ess="https://exist.edirom.de" at "letters.xqm";
 ```
 
+## Modulvariablen
+
+Diese müssen – wie Funktionen – ein Namespaceprefix besitzen und mit einem 
+Semikolon abgeschlossen werden. 
+Die Angabe des Datentyps ist fakultativ.  
+
+```xquery
+declare variable $ess:year as xs:integer := 2024;
+```
+
+
 ## XQuery Dokumentation
 
 Es gibt dafür keinen "offiziellen" W3C-Standard, aber xqDoc füllt diese Lücke.
