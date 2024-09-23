@@ -23,5 +23,11 @@ Geschichte und Entwicklung, Übersicht über die Features, …
 
 #### [Einführung in XPath](xpath.md)
 
+Einführung in XPath: Achsen, Bedingungen, Funktionen 
+
 #### [Einführung in XQuery](xquery.md)
+
+Einführung in XQuery: Datenmodell, Sequenzen, FLOWR-Ausdrücke 
+
+#### [Übungsbeispiele](xquery2.md)
 

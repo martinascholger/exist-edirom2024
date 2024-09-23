@@ -1,7 +1,17 @@
 # Was ist XPath
-XPath ist eine Syntax, die in XSLT, XQuery und anderen Programmiersprachen verwendet wird, um in XML-Dokumenten zu navigieren, Teile zu extrahieren und auszuwerten. 
+XPath ist eine Syntax, die in XSLT, XQuery und anderen X-Technologien verwendet wird, um in XML-Dokumenten zu navigieren und "Rückgaben" zu erzeugen. 
+Dabei können zum Beispiel Teilbäume extrahiert, Daten manipuliert oder Elemente gezählt werden.  
+
+# Knotentypen
+- Dokumentknoten (wird mit `/` adressiert, um das Dokument einzulesen)
+- Wurzelknoten (`TEI`)
+- Elementknoten (`opener`, `closer`, `persName`)
+- Attributknoten (`@ref`, `@type`) 
+- Textknote (`text()`)
 
 # XPath-Navigation
+- Ein Lokalisierungsschritt besteht aus einer Achsenangabe, dem Knotentext und ggf. einem Prädikat: `/body//persName[@key='A000584']`
+ 
 - Navigieren Sie über die Achsen `child::` (Kurzversion ohne Achsenangabe) und `descendant::` (Kurzversion //)
 - Probieren Sie die Achsen `preceding` und `preceding-sibling` aus. (Es gibt äquivalente Achsen mit "following".)
 - Wenden Sie Prädikate als boolesche Filter an, indem Sie `[. . .]` verwenden.
