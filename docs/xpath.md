@@ -10,7 +10,7 @@ Dabei können zum Beispiel Teilbäume extrahiert, Daten manipuliert oder Element
 - Textknote (`text()`)
 
 # XPath-Navigation
-- Ein Lokalisierungsschritt besteht aus einer Achsenangabe, dem Knotentext und ggf. einem Prädikat: `/body//persName[@key='A000584']`
+- Ein Lokalisierungsschritt besteht aus einer Achsenangabe, dem Knotentext und ggf. einem Prädikat: `//rs[@type='person']`
 
 ![XPath Achsen](xpath-axis.gif)
   

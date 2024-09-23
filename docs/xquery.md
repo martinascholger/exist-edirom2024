@@ -2,9 +2,28 @@
 XQuery (XML Query Language) ist eine Abfragesprache, die speziell für die Verarbeitung von XML-Dokumenten entwickelt wurde. 
 Sie ermöglicht es, komplexe Abfragen auf XML-Datenbanken oder Dokumenten durchzuführen, ähnlich wie SQL für relationale Datenbanken. 
 
+- **Auswahl** (Suchen bestimmter Information, Herausfiltern 
+unerwünschter Information)
+- **Sortierung, Gruppierung, Zusammenfassen** von Daten
+- **Verknüpfung** von Daten aus verschiedenen Dokumenten
+- Durchführung von **Berechnungen** / Umformatierung von 
+Text 
+- **Rückgabe** von Ergebnissen
+- **Transformation** (z.B. in ein anderes XML-Vokabular) und 
+**Umstrukturierung**
+
 # Datenmodell
 
+ - Knoten (Element, Attribut, Textknoten, …)
+ - Atomarer Wert (String, Zahl, …)
+ - Item (Knoten oder atomarer Wert)
+ - Sequenz (Gruppe aus null oder mehr Elementen, geordnet, nicht 
+hierarchisch). 
+
 # Sequenzen
+ - ()
+ - (1, 2, 3)
+ - ("Graz", "Wien", "Salzburg", ("Klagenfurt", "Linz")
 
 # XQuery für Einzeldokumente und Sammlungen
 
@@ -28,3 +47,5 @@ Das Herzstück von XQuery sind die FLOWR-Ausdrücke (flower). Sie ermöglichen k
 - **where** (optional): filtert die Knoten, analog zu Prädikaten in XPath
 - **order by** (optional): sortiert die Knoten
 - **return**: liefert das Ergebnis zurück
+
+
