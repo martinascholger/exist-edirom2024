@@ -23,7 +23,7 @@ hierarchisch).
 # Sequenzen
  - ()
  - (1, 2, 3)
- - ("Graz", "Wien", "Salzburg", ("Klagenfurt", "Linz")
+ - ("Graz", "Wien", "Salzburg", ("Klagenfurt", "Linz"))
 
 # XQuery für Einzeldokumente und Sammlungen
 

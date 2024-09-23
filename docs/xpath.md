@@ -7,7 +7,7 @@ Dabei können zum Beispiel Teilbäume extrahiert, Daten manipuliert oder Element
 - Wurzelknoten (`TEI`)
 - Elementknoten (`opener`, `closer`, `persName`)
 - Attributknoten (`@ref`, `@type`) 
-- Textknote (`text()`)
+- Textknoten (`text()`)
 
 # XPath-Navigation
 - Ein Lokalisierungsschritt besteht aus einer Achsenangabe, dem Knotentext und ggf. einem Prädikat: `//rs[@type='person']`
