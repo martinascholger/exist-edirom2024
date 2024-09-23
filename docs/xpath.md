@@ -11,7 +11,9 @@ Dabei können zum Beispiel Teilbäume extrahiert, Daten manipuliert oder Element
 
 # XPath-Navigation
 - Ein Lokalisierungsschritt besteht aus einer Achsenangabe, dem Knotentext und ggf. einem Prädikat: `/body//persName[@key='A000584']`
- 
+
+![XPath Achsen](xpath-axis.gif)
+  
 - Navigieren Sie über die Achsen `child::` (Kurzversion ohne Achsenangabe) und `descendant::` (Kurzversion //)
 - Probieren Sie die Achsen `preceding` und `preceding-sibling` aus. (Es gibt äquivalente Achsen mit "following".)
 - Wenden Sie Prädikate als boolesche Filter an, indem Sie `[. . .]` verwenden.
