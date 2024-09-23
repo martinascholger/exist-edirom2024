@@ -1,5 +1,7 @@
 ## Anwendungsentwicklung mit eXist-db
 
+<https://tinyurl.com/exist2024>
+
 ### Kursbeschreibung
 
 Die eXist Native XML Database ist eine XML-Datenbank, die in den Digitalen Geisteswissenschaften häufig eingesetzt wird, insbesondere, um im TEI-Standard codierte Dokumente zu verwalten und zu präsentieren. eXist-db wird daher häufig nicht nur als Datenbank-Backend verwendet, sondern auch zur Entwicklung von Publikationsplattformen, z. B. für digitale Editionen. Mit Hilfe von eXist können Webanwendungen dabei rein auf Basis von XML-Technologien wie XML, XHTML, XQuery und XSLT entwickelt werden.
