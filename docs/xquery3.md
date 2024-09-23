@@ -224,6 +224,11 @@ return
 </html>
 ```
 
+## Übung
+
+Verlinken von Brieftabelle oder Titellisting auf Einzeldarstellung eines Briefs.
+
+
 ## Links
 
 * [XSLT and XQuery Serialization 3.1](https://www.w3.org/TR/xslt-xquery-serialization-31/)
