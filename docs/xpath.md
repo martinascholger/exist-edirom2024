@@ -37,3 +37,9 @@ Dabei können zum Beispiel Teilbäume extrahiert, Daten manipuliert oder Element
 - Wie viele gibt es davon?
 - Welcher XPath findet die Werte des @ref-Attributs in den \<persName\>-Elementen?
 - Welche Funktion findet die eindeutigen Attributwerte?
+
+
+# Links
+
+* [XPath and XQuery Functions and Operators 3.1](https://www.w3.org/TR/xpath-functions-31/)
+* Wikipedia Artikel ["XPath"](https://en.wikipedia.org/wiki/XPath)
