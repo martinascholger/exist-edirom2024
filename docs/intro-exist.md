@@ -62,7 +62,9 @@ himself: eXist." (Siegel/Retter 2015, p.5)
 * Das Paket dann im Package Manager hochladen
 * [Bei Interesse:] Die Erstellung des Datenpakets ist unter 
     <https://github.com/martinascholger/exist-edirom2024/blob/main/scripts/obtain-data-xar.sh> 
-    dokumentiert
+    
+    
+ * Datenpaket Google Drive (https://drive.google.com/drive/folders/1K8A4hyQGLs-l-5m2qrCtsjZzI5qS0K7q?usp=sharing)
 
 ## Some Links
 
