@@ -36,3 +36,7 @@ Funktionen, Module und Dokumentation mit xqDoc
 #### [XQuery, part 3](xquery3.md)
 
 Serialization und Output-Options, Request-Modul und XSLT-Transformationen 
+
+#### [XQuery, part 4](xquery4.md)
+
+JSON-Ausgabe und Lucene-Volltextsuche
