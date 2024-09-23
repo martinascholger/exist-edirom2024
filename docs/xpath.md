@@ -42,4 +42,4 @@ Dabei können zum Beispiel Teilbäume extrahiert, Daten manipuliert oder Element
 # Links
 
 * [XPath and XQuery Functions and Operators 3.1](https://www.w3.org/TR/xpath-functions-31/)
-* Wikipedia Artikel ["XPath"](https://en.wikipedia.org/wiki/XPath)
+* Wikipedia Artikel ["XPath"](https://de.wikipedia.org/wiki/XPath)
