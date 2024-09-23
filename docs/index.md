@@ -29,5 +29,10 @@ Einführung in XPath: Achsen, Bedingungen, Funktionen
 
 Einführung in XQuery: Datenmodell, Sequenzen, FLOWR-Ausdrücke 
 
-#### [Übungsbeispiele](xquery2.md)
+#### [XQuery, part 2](xquery2.md)
 
+Funktionen, Module und Dokumentation mit xqDoc
+
+#### [XQuery, part 3](xquery3.md)
+
+Serialization und Output-Options, Request-Modul und XSLT-Transformationen 
