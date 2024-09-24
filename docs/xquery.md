@@ -12,7 +12,7 @@ Text
 - **Transformation** (z.B. in ein anderes XML-Vokabular) und 
 **Umstrukturierung**
 
-# Datenmodell
+## Datenmodell
 
  - Knoten (Element, Attribut, Textknoten, …)
  - Atomarer Wert (String, Zahl, …)
@@ -20,12 +20,12 @@ Text
  - Sequenz (Gruppe aus null oder mehr Elementen, geordnet, nicht 
 hierarchisch). 
 
-# Sequenzen
+## Sequenzen
  - ()
  - (1, 2, 3)
  - ("Graz", "Wien", "Salzburg", ("Klagenfurt", "Linz"))
 
-# XQuery für Einzeldokumente und Sammlungen
+## XQuery für Einzeldokumente und Sammlungen
 
 Über die `doc()` Funktion werden einzelne XML-Dokumente eingelesen.
 
@@ -35,7 +35,7 @@ Die `collection()` Funktion adressiert ein ganzes Verzeichnis, in dem XML-Dateie
 
 ```collection('/db/apps/WeGA-data/letters')```
 
-# TEI und XQuery
+## TEI und XQuery
 
 Bevorzugte Variante (allen selektierten Elementen muss das Präfix 'tei:' vorangestellt werden :
 
@@ -45,7 +45,7 @@ Alternative Variante
 
 ```declare default element namespace "http://www.tei-c.org/ns/1.0";```
 
-# FLOWR Ausdrücke 
+## FLOWR Ausdrücke 
 Das Herzstück von XQuery sind die FLOWR-Ausdrücke (flower). Sie ermöglichen komplexe Ausdrücke um Informationen aus Dateien und Sammlungen abzufragen und neu zu ordnen. 
 
 - **for**: selektiert eine Sequenz an Knoten
@@ -54,7 +54,7 @@ Das Herzstück von XQuery sind die FLOWR-Ausdrücke (flower). Sie ermöglichen k
 - **order by** (optional): sortiert die Knoten
 - **return**: liefert das Ergebnis zurück
 
-# Beispiel 1a: Funktion collection()
+## Beispiel 1a: Funktion collection()
 
 ```xquery
 xquery version "3.1";
@@ -66,7 +66,7 @@ collection("/db/apps/WeGA-data/letters/A0400xx")//tei:correspAction[@type='sent'
 ```
 
 
-# Beispiel 1b: Beispiel 1a in FLOWR-Kontruktion übersetzt
+## Beispiel 1b: Beispiel 1a in FLOWR-Kontruktion übersetzt
 ```xquery
 xquery version "3.1";
 
@@ -80,7 +80,7 @@ return
     $letter//tei:persName
 ```
 
-# Beispiel 2a: Breiftitel ausgeben
+## Beispiel 2a: Brieftitel ausgeben
 ```xquery
 xquery version "3.1";
 
@@ -108,7 +108,7 @@ return
 </html>
 ```
 
-# Beispiel 2b: `<lb/>` in Titel durch Leerzeichen ersetzen, Verlinkung auf Einzelbriefe
+## Beispiel 2b: `<lb/>` in Titel durch Leerzeichen ersetzen, Verlinkung auf Einzelbriefe
 
 ```xquery
 xquery version "3.1";
