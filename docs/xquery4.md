@@ -231,3 +231,5 @@ for $letter in collection('/db/apps/WeGA-data/letters')/tei:TEI/ft:query(., $que
 * ["XQuery 3.1 Arrays and JSON Support"](http://exist-db.org/exist/apps/wiki/blogs/eXist/XQuery31)
 * "Lucene Full Text Index" in der 
   [eXist Dokumentation](http://exist-db.org/exist/apps/doc/lucene)
+* Google Charts
+  [Dokumentation](https://developers.google.com/chart?hl=de)  
