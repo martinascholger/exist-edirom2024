@@ -41,4 +41,4 @@ Serialization und Output-Options, Request-Modul und XSLT-Transformationen
 
 #### [XQuery, part 4](xquery4.md)
 
-JSON-Ausgabe und Lucene-Volltextsuche
+Maps & Arrays, JSON-Ausgabe und Lucene-Volltextsuche
