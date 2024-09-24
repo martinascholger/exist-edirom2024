@@ -115,6 +115,11 @@ In einem anderen XQuery wird dieses Modul dann folgendermaßen eingebunden:
 import module namespace ess="https://exist.edirom.de" at "letters.xqm";
 ```
 
+Module können auch direkt online per URL eingebunden werden:
+```xquery
+import module namespace functx="http://www.functx.com" at "http://www.datypic.com/xq/functx-1.0.1-nodoc.xq";
+```
+
 ## Modulvariablen
 
 Diese müssen – wie Funktionen – ein Namespaceprefix besitzen und mit einem 
@@ -130,3 +135,4 @@ declare variable $ess:year as xs:integer := 2024;
 * [XQuery Wikibook](https://en.wikibooks.org/wiki/XQuery)
 * Michael Kay, [Defining your own Functions in XQuery](http://www.stylusstudio.com/xquery/xquery-functions.html)
 * [XQuery 3.1: An XML Query Language. W3C Recommendation 21 March 2017](https://www.w3.org/TR/xquery-31/)
+* [FunctX XQuery Function Library](http://www.datypic.com/xq/)
