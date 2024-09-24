@@ -33,11 +33,11 @@ Einführung in XQuery: Datenmodell, Sequenzen, FLOWR-Ausdrücke
 
 #### [XQuery, part 2](xquery2.md)
 
-Funktionen, Module und Dokumentation mit xqDoc
+Serialization und Output-Options, Funktionen, Module und Dokumentation mit xqDoc
 
 #### [XQuery, part 3](xquery3.md)
 
-Serialization und Output-Options, Request-Modul und XSLT-Transformationen 
+Request-Modul und XSLT-Transformationen 
 
 #### [XQuery, part 4](xquery4.md)
 

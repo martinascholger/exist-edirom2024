@@ -1,5 +1,22 @@
 # XQuery, part 2
 
+## Serialization und output options
+
+Definiert sind die Methoden "XML", "(X)HTML", "JSON", "Text" und "Adaptive".
+eXist unterstützt darüber hinaus die proprietäre Methode "HTML5".
+
+Für jede Methode können noch weitere Angaben z.B. zum "media-type" oder
+"indent" gemacht werden.
+
+```xquery
+declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization";
+
+declare option output:method "xhtml";
+declare option output:media-type "text/html";
+declare option output:indent "yes";
+declare option output:omit-xml-declaration "yes";
+```
+
 ## Briefmetadaten als HTML-Tabelle ausgeben
 
 ```xquery
@@ -11,6 +28,12 @@ xquery version "3.1";
 declare namespace ess="https://exist.edirom.de";
 declare namespace xhtml="http://www.w3.org/1999/xhtml";
 declare namespace tei="http://www.tei-c.org/ns/1.0";
+declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization";
+
+declare option output:method "xhtml";
+declare option output:media-type "text/html";
+declare option output:indent "yes";
+declare option output:omit-xml-declaration "yes";
 
 (:~
  : Return an HTML table of letters, a letter per row.

@@ -1,22 +1,5 @@
 # XQuery, part 3
 
-## Serialization und output options
-
-Definiert sind die Methoden "XML", "(X)HTML", "JSON", "Text" und "Adaptive".
-eXist unterstützt darüber hinaus die proprietäre Methode "HTML5".
-
-Für jede Methode können noch weitere Angaben z.B. zum "media-type" oder 
-"indent" gemacht werden.
-
-```xquery
-declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization";
-
-declare option output:method "xhtml";
-declare option output:media-type "text/html";
-declare option output:indent "yes";
-declare option output:omit-xml-declaration "yes";
-```
-
 ## XQuery Dokumentation
 
 Es gibt dafür keinen "offiziellen" W3C-Standard, aber xqDoc füllt diese Lücke.
