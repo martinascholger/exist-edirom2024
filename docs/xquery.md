@@ -29,11 +29,15 @@ hierarchisch).
 
 Über die `doc()` Funktion werden einzelne XML-Dokumente eingelesen.
 
-```doc('/db/apps/WeGA-data/letters/A0400xx/A040000.xml')```
+```xquery
+doc('/db/apps/WeGA-data/letters/A0400xx/A040000.xml')
+```
 
 Die `collection()` Funktion adressiert ein ganzes Verzeichnis, in dem XML-Dateien abgelegt sind. 
 
-```collection('/db/apps/WeGA-data/letters')```
+```xquery
+collection('/db/apps/WeGA-data/letters')
+```
 
 ## TEI und XQuery
 
@@ -43,7 +47,9 @@ Bevorzugte Variante (allen selektierten Elementen muss das Präfix 'tei:' vorang
 
 Alternative Variante
 
-```declare default element namespace "http://www.tei-c.org/ns/1.0";```
+```xquery
+declare default element namespace "http://www.tei-c.org/ns/1.0";
+```
 
 ## FLOWR Ausdrücke 
 Das Herzstück von XQuery sind die FLOWR-Ausdrücke (flower). Sie ermöglichen komplexe Ausdrücke um Informationen aus Dateien und Sammlungen abzufragen und neu zu ordnen. 
@@ -62,11 +68,11 @@ xquery version "3.1";
 declare namespace tei="http://www.tei-c.org/ns/1.0";
 
 collection("/db/apps/WeGA-data/letters/A0400xx")//tei:correspAction[@type='sent']//tei:persName
-
 ```
 
 
 ## Beispiel 1b: Beispiel 1a in FLOWR-Kontruktion übersetzt
+
 ```xquery
 xquery version "3.1";
 
@@ -81,6 +87,7 @@ return
 ```
 
 ## Beispiel 2a: Brieftitel ausgeben
+
 ```xquery
 xquery version "3.1";
 
