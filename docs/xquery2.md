@@ -60,7 +60,7 @@ declare function ess:letter2tr($letter as document-node()?) as element(xhtml:tr)
     let $sender := ($letter//tei:correspAction[@type='sent']/tei:persName)[1] => normalize-space()
     let $addressee := ($letter//tei:correspAction[@type='received']/tei:persName)[1] => normalize-space()
     return
-        if($sender or $addressee or $date)
+        if($sender or $addressee)
         then
             <xhtml:tr>
                 <xhtml:td>{$id}</xhtml:td>
