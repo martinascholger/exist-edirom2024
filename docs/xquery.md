@@ -41,9 +41,11 @@ collection('/db/apps/WeGA-data/letters')
 
 ## TEI und XQuery
 
-Bevorzugte Variante (allen selektierten Elementen muss das Präfix 'tei:' vorangestellt werden :
+Bevorzugte Variante (allen selektierten Elementen muss das Präfix 'tei:' vorangestellt werden:
 
-```declare namespace tei="http://www.tei-c.org/ns/1.0";```
+```xquery
+declare namespace tei="http://www.tei-c.org/ns/1.0";
+```
 
 Alternative Variante
 
