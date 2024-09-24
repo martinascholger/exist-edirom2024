@@ -143,7 +143,62 @@ Diese Ausgabe kann dann z.B. in einem Google Diagramm als Quelle genutzt werden:
 
 ## Lucene Volltextsuche
 
+### Index-Konfiguration
+
+Diese muss unterhalb `/db/system/config/apps` abgelegt werden, den Pfad der 
+zu indizierenden Collection spiegelnd.
+
+```xml
+<collection xmlns="http://exist-db.org/collection-config/1.0">
+    <!-- Index-Einträge für letters -->
+    <index xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+        <range>
+            <!-- EInträge für den Range-Index -->
+        </range>
+        <fulltext default="none" attributes="false"/>
+        <lucene diacritics="no">
+            <analyzer class="org.exist.indexing.lucene.analyzers.NoDiacriticsStandardAnalyzer">
+                <param name="stopwords" type="org.apache.lucene.analysis.util.CharArraySet"/>
+            </analyzer>
+            <text qname="tei:correspDesc" boost="2.0"/>
+            <text qname="tei:body"/>
+            <text qname="tei:note"/>
+            <text qname="tei:title" boost="2.0"/>
+            <text qname="tei:TEI">
+                <ignore qname="tei:publicationStmt"/>
+                <ignore qname="tei:seriesStmt"/>
+                <ignore qname="tei:encodingDesc"/>
+                <ignore qname="tei:profileDesc"/>
+                <ignore qname="tei:revisionDesc"/>
+                <ignore qname="tei:respStmt"/>
+                <ignore qname="tei:editor"/>
+            </text>
+            <inline qname="tei:hi"/>
+            <inline qname="tei:lb"/>
+            <inline qname="tei:pb"/>
+            <inline qname="tei:cb"/>
+            <inline qname="tei:supplied"/>
+        </lucene>
+    </index>
+</collection>
+```
+
+### Abfragen
+
+```xquery
+xquery version "3.1";
+
+declare namespace tei="http://www.tei-c.org/ns/1.0";
+declare namespace ft="http://exist-db.org/xquery/lucene";
+
+collection('/db/apps/WeGA-data/letters')//tei:note/ft:query(., 'Himmel')
+```
+
 ## Links
 
 * Abschnitt "Maps and Arrays" in der 
   [XQuery 3.1 Spezifikation](https://www.w3.org/TR/xquery-31/#id-maps-and-arrays) 
+* eXist Blog-Artikel 
+* ["XQuery 3.1 Arrays and JSON Support"](http://exist-db.org/exist/apps/wiki/blogs/eXist/XQuery31)
+* "Lucene Full Text Index" in der 
+  [eXist Dokumentation](http://exist-db.org/exist/apps/doc/lucene)
