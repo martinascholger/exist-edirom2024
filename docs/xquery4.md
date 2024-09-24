@@ -194,6 +194,35 @@ declare namespace ft="http://exist-db.org/xquery/lucene";
 collection('/db/apps/WeGA-data/letters')//tei:note/ft:query(., 'Himmel')
 ```
 
+### KWIC-Index
+
+```xquery
+xquery version "3.1";
+
+declare namespace tei="http://www.tei-c.org/ns/1.0";
+declare namespace ft="http://exist-db.org/xquery/lucene";
+
+import module namespace kwic="http://exist-db.org/xquery/kwic";
+
+for $hit in collection('/db/apps/WeGA-data/letters')//tei:note/ft:query(., 'Himmel')
+order by ft:score($hit) descending
+return
+    kwic:summarize($hit, <config width="40"/>)
+```
+
+### Erweiterung der Briefliste
+
+```xquery
+(: Abfragen des Query-Parameters :)
+let $query := request:get-parameter("q", ())
+(: Durchsuchen der Collection :)
+for $letter in collection('/db/apps/WeGA-data/letters')/tei:TEI/ft:query(., $query)/root()
+(: Ergänzen eines Input-Feldes :)
+<form>
+    <input type="text" name="q" value="{$query}"/>
+</form>
+```
+
 ## Links
 
 * Abschnitt "Maps and Arrays" in der 
