@@ -154,3 +154,12 @@ declare namespace tei="http://www.tei-c.org/ns/1.0";
     </body>
 </html>
 ``` 
+
+## Dateiendungs-Konventionen
+
+Es kursieren zwar verschiedene Dateiendungen für XQueries (`.xql`, `.xqm`, `.
+xquery`, `.xq`), durch das Buch von Siegel/Retter haben sich aber die folgenden 
+beiden als Norm herauskristallisiert:
+
+* `.xq` für ausführbare XQueries
+* `.xqm` für XQuery-Library-Module
